@@ -1,0 +1,278 @@
+@import "tailwindcss";
+
+* {
+    box-sizing: border-box;
+    
+    scroll-behavior: smooth;
+}
+.headerbg{
+  background-image: 
+    linear-gradient( to right, #060f36, #031971) ,
+    url("images/scopeindia-bkg.png");
+  background-repeat: no-repeat,repeat-x;
+  background-size: 100% 100%, 15% auto;
+  background-position: left center, left center;
+  background-attachment: scroll;
+  background-blend-mode: multiply;
+  
+}
+#header{
+  font-family: Poppins, Arial;
+  letter-spacing: 1px;
+}
+
+.yourCareerPartner{
+  font-size: 35px;
+  color: #eeaf10;
+  background: linear-gradient(to bottom, #0A1855, #031971);
+  border-bottom:#c7ac20 solid 2px ;
+}
+.viga-regular {
+  font-family: "Viga", sans-serif;
+  /* font-weight: 400; */
+  /* font-style: normal; */
+}
+.careerinItbg{
+  /* background: linear-gradient(90deg, rgb(11 23 81) 0%, rgb(10 29 121) 31%); */
+  background: linear-gradient(to bottom, #0A1855, #031971);
+}
+.forboxRound{
+  border: solid 2px;
+  border-top-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-color: #f1ad0e;
+}
+.placementfontSize{
+  font-size: 40px;
+  color: #e5c000;
+  
+    
+}
+.footer{
+  background: linear-gradient(to bottom, #031971, #0A1855);
+  text-align: center;
+}
+.footer span{
+  
+  padding: 3px;
+}
+#placement p{
+  font-size: 18px;
+}
+
+.matchAi {
+  background: linear-gradient(to bottom, #0A1855, #031971);
+  text-align: center;
+}
+.matchAitext{
+  font-size: 45px;
+  text-align: center;
+  background: linear-gradient(0deg, 
+          rgb(187 151 39) 29%, 
+          rgb(249 245 146) 50%,
+          rgb(215 167 41) 76%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#matchAih3{
+  font-size: 23px;
+  color: #0b1e7d;
+  background: linear-gradient(0deg, 
+          rgb(187 151 39) 3%, 
+          rgb(249 245 146) 56%,
+          rgb(215 167 41) 100%);
+  border-radius: 20px 2px;
+  display: inline-block;  
+  padding: 10px 20px;
+  font-weight: bold;
+}
+@keyframes moveRobotLR{
+  0% { transform: translateX(0); }
+  50% {transform: translateX(20px);}
+  100%{transform: translateX(0);}
+}
+
+.animateRobot{
+  height: 110%;
+  animation: moveRobotLR 3s ease-in-out infinite;
+}
+
+/* .bgGradient{
+  background: linear-gradient(to bottom,#04145f, #ced0d8,);
+} */
+.noCodingBG{
+  background: linear-gradient(to bottom, #0B1853, #031971);
+  padding: 50px;
+}
+#noCoding .title{
+  color: #EEC805;
+  font-size: 50px;
+}
+#noCoding h2{
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+#noCoding .title1{
+  text-align: center;
+  color: white;
+  font-size: 22px;
+}
+.devopsLinear {
+  background: linear-gradient(90deg, rgba(217, 18, 111, 0.45) 0%, rgb(217, 18, 111) 10%);
+  padding: 10px 20px;
+}
+#ourMission{
+   background: linear-gradient(to bottom, #0A1855, #0b2488);
+  color: white;
+  padding: 40px;
+}
+#ourMission h4{
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px;
+}
+#ourMission p, 
+#ourMission li{
+  font-size: 14px;
+  padding: 5px;
+  
+}
+.missionBox{
+  border: solid 2px;
+  border-color:#e5c000 ;
+  border-radius: 20px;
+}
+.missiondiv{
+  background-color: #e0aa0c;
+  border-radius:100px;
+  display: inline-block;
+  padding: 10px;
+}
+#registrationForm label{
+  color:#14267c ;
+  font-size: 14px;
+  font-family: poppins;
+  font-weight: bold;
+}
+#registrationForm input{
+  border: solid 1px #c3ad23;
+  padding: 10px;
+  border-radius: 7px;
+  font-weight: bold;
+  font-family: poppins;
+  
+}
+#gender input[type="radio"] {
+  margin-right: 10px;
+  accent-color: gold;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+#gender label{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 15px;
+}
+.regbox{
+  border: solid 1px #c3ad23;
+  padding: 10px;
+  border-radius: 7px;
+  font-weight: bold;
+  font-family: poppins;
+}
+#training_mode{
+  accent-color: gold;
+  vertical-align: middle;
+  cursor: pointer;
+}
+#training_mode input{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 15px;
+}
+#training_mode label{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 15px;
+}
+#checkboxcss{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+}
+#checkboxcss input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: gold; 
+  margin-right: 10px;
+}
+#checkboxcss label{
+  display: flex;
+  align-items: center;  
+  padding: 3px;
+  
+}
+.completeButton{
+    font-size: 200%;
+    background: linear-gradient(100deg, #8b8a8a, #acacac);
+    box-shadow: white 2px 2px 10px;
+    padding: 10px;
+    border: 2px solid gold;
+    text-shadow: blue 2px 1px 5px;
+    cursor: pointer;
+    border-radius: 7px;
+    font-family: poppins;
+    font-size: 28px;
+    font-weight: bold;
+}
+#abtMainSec{
+  background: linear-gradient(90deg, rgb(11 23 81)0%, rgb(10 29 121)31%);
+}
+#abtMainSec p{
+  line-height: 2;
+  letter-spacing: 1.5px;
+}
+.boxcss{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  padding: 45px;
+  margin-bottom: 30px;
+}
+#ourStory h3{
+  font-size: 22px;
+  padding: 0 0 20px 0;
+  color: #04145f;
+}
+#ourStory p{
+  color: #0b27a8;
+  font-size: 14px;
+  line-height: 25px;
+  padding-bottom: 15px;
+}
+.iconPlus{
+  background-color: lightblue;
+  border-radius: 50%;  
+  padding: 10px;
+}
+.mainsech4{
+  color: #04145f;
+  text-align: center;
+  font-weight: bold;
+}
+.fontli{
+  font-family: poppins, arial;
+  font-size: 14px;
+}
+#training_mode input{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 15px;
+}

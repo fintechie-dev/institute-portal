@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import HomePage from '../client/pages/homepage'
 import Header from '../client/pages/header'
 import FooterPage from '../client/pages/footer'
@@ -15,13 +15,19 @@ import Login from '../client/pages/Login'
 import Dashboard from '../client/pages/dashboard'
 import RequestOtp from '../client/pages/RequestOtp'
 import SetPassword from '../client/pages/SetPassword'
+import StdDashboard from '../client/student/StdDashboard'
+import ProtectedRoute from '../client/student/ProtectedRoute'
+import Profile from '../client/student/Profile'
+import AddCourses from '../client/student/AddCourses'
+
 
 function App() {
-
+  const location = useLocation();
+  const hideHeadandFoot = location.pathname.startsWith('/dashboard')||location.pathname.startsWith('/profile')||location.pathname.startsWith('/addcourse')
 
   return (
    <div>
-    <Header />
+    { !hideHeadandFoot && <Header />}
     <Routes>
       <Route path='/' element={<HomePage />} />
       <Route path='/courses' element={<CoursesPage />}/>
@@ -32,11 +38,13 @@ function App() {
       {/* <Route path='/placement' element={<HomePage />} /> */}
       {/* <Route path='/faq' element={<HomePage />} /> */}
       <Route path='/login' element={<Login />} />
-      <Route path='/dashboard' element={<Dashboard />} />
+      <Route path='/dashboard' element={<ProtectedRoute><StdDashboard /></ProtectedRoute>} />
+      <Route path='/profile' element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+      <Route path='/addcourse' element={<ProtectedRoute><AddCourses /></ProtectedRoute>} />
       <Route path='/request-otp' element={<RequestOtp />} />
       <Route path='/set-password' element={<SetPassword />} />
     </Routes>
-    <FooterPage />
+    { !hideHeadandFoot && <FooterPage />}
    </div>
   )
 }

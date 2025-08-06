@@ -7,9 +7,32 @@ const Students = require('../models/Students.cjs');
 
 // nodemailer setup
 router.post('/', async (req,res)=>{
-    const {fullName, email, courseList} = req.body;
+    const {
+        fullName, 
+        dob, 
+        gender, 
+        education, 
+        mobile, 
+        email, 
+        guardian, 
+        occupation, 
+        gnumber, 
+        courseList, 
+        mode, 
+        location, 
+        ptime, 
+        address, 
+        country, 
+        state, 
+        district, 
+        pin } = req.body;
+       
+        //if string make courselist as an array always
+        if(typeof courseList ==='string'){
+            courseList = [courseList]
+        }
 
-    if (!fullName || !email || !courseList) {
+    if (!fullName || !email || !courseList.length) {
         return res.status(400).json({success :  false, message : 'Missing required fields..'})
     }
 
@@ -19,9 +42,26 @@ router.post('/', async (req,res)=>{
         // first argument for search students data if exist or not 
         {email}, 
         //update / create
-        {fullName, email, hasSetPassword:false},{ upsert: true, new : true})
+        { fullName,
+            dob,
+            gender,
+            education,
+            mobile,
+            email,
+            guardian,
+            occupation,
+            gnumber,
+            course: courseList,
+            mode,
+            location,
+            ptime,
+            address,
+            country,
+            state,
+            district,
+            pin,
+            hasSetPassword:false},{ upsert: true, new : true})
     
-
         //set nodemailer transporter
         let transporter = nodemailer.createTransport({
             host : 'smtp.gmail.com',

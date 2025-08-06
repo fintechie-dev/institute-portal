@@ -37,11 +37,15 @@ const Registration = () => {
     // Submit data...
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
-    
+
     // add location from state
     data.country = location.country;
     data.state = location.state;
     data.district = location.district;
+    data.ptime = Array.from(formData.getAll('ptime'));
+    
+    //make all course values in an array
+    data.courseList = formData.getAll('courseList')
 
     try{
         const response= await fetch('http://localhost:5000/api/register', {
@@ -52,6 +56,7 @@ const Registration = () => {
         const result = await response.json();
         if (result.success){
             alert('Regestration successfull, check your mail');
+            console.log(data)
             // reset form field
             e.target.reset();
             //reset location -reset react state
@@ -181,6 +186,7 @@ const Registration = () => {
                         name="courseList"
                         placeholder="Choose Your Course!"
                         defaultValue=""
+                        
                         required
                         className="w-full regbox">
                             <option disabled value="">Choose your course!</option>

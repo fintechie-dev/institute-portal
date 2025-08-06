@@ -15,15 +15,16 @@ const Login = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
+        credentials: 'include'
       });
 
       const data = await response.json();
 
       if (data.success) {
         alert("Login Successful!");
-        navigate('/dashboard?fresh=true');
+        navigate('/dashboard');
       } else {
-        if (data.message.includes("not activated")) {
+        if (data.message.includes("Not setup password")) {
           alert("You haven't set your password yet. Let's do that now.");
           localStorage.setItem("email", email);
           navigate("/request-otp");
@@ -104,8 +105,11 @@ const Login = () => {
 
           <div className="mt-4 flex items-center justify-between">
             <span className="border-b w-1/5 md:w-1/4"></span>
-            <a href="#" className="text-xs text-gray-500 uppercase">
+            <a href="http://localhost:5173/registration" className="text-xs text-gray-500 uppercase">
               or sign up
+            </a><br />
+            <a href="http://localhost:5173/request-otp" className="text-xs text-gray-500 uppercase">
+              or Fisrt time user
             </a>
             <span className="border-b w-1/5 md:w-1/4"></span>
           </div>

@@ -25,7 +25,7 @@ const RequestOtp = () => {
 
         const data = await response.json();
         if (data.success) {
-            alert('OTP sent to mail');
+            alert('OTP sent to mail, Check your mail');
             navigate('/set-password');
         } else {
             setDisplayStatus(data.message);
@@ -43,7 +43,7 @@ const RequestOtp = () => {
                     }}
                 ></div>
                 <div className="w-full p-8 lg:w-1/2">
-                    <h2 className="text-2xl font-semibold text-gray-700 text-center">Brand</h2>
+                    <h2 className="text-2xl font-semibold text-gray-700 text-center">Scop India</h2>
                     <p className="text-xl text-gray-600 text-center mb-6">Request OTP</p>
 
                     {/* Display user's email from localStorage */}

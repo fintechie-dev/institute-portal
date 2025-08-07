@@ -8,7 +8,7 @@ import Header from '../client/pages/header'
 import FooterPage from '../client/pages/footer'
 import CoursesPage from '../client/pages/courses'
 import AddCourse from '../client/pages/addCourse'
-import Registration from '../client/pages/registration'
+import Registration from '../client/pages/Registration'
 import AboutUs from '../client/pages/about'
 import Contact from '../client/pages/contact'
 import Login from '../client/pages/Login'
@@ -19,6 +19,7 @@ import StdDashboard from '../client/student/StdDashboard'
 import ProtectedRoute from '../client/student/ProtectedRoute'
 import Profile from '../client/student/Profile'
 import AddCourses from '../client/student/AddCourses'
+import CourseDetails from '../client/pages/CourseDetails'
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
     <Routes>
       <Route path='/' element={<HomePage />} />
       <Route path='/courses' element={<CoursesPage />}/>
+      <Route path='/courses/:slug' element={<CourseDetails />}/>
       <Route path='/add' element={<AddCourse />} />
       <Route path='/registration' element={<Registration />} />
       <Route path='/about' element={<AboutUs />} />
@@ -43,6 +45,7 @@ function App() {
       <Route path='/addcourse' element={<ProtectedRoute><AddCourses /></ProtectedRoute>} />
       <Route path='/request-otp' element={<RequestOtp />} />
       <Route path='/set-password' element={<SetPassword />} />
+      <Route path="/courses/:slug" element={<CourseDetails />} />
     </Routes>
     { !hideHeadandFoot && <FooterPage />}
    </div>

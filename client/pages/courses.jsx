@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const CoursesPage=()=>{
@@ -9,7 +10,11 @@ const CoursesPage=()=>{
         .then(res=>res.json())
         .then(data =>setCourses(data))
         .catch((err)=>console.error('error in using api',err))
-    },[])
+    },[]);
+
+    const slugify = (name) =>
+        name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
     return(
         <div>
             <section className="">
@@ -36,7 +41,9 @@ const CoursesPage=()=>{
                                 <li 
                                     key={index}
                                     className="bg-white p-5 text-[21px] text-[#0d0d8a] viga-regular hover:bg-[#fff9dc] cursor-pointer rounded-[10px] flex items-center justify-between border-2 border-[#fdd51c]"
-                                    ><h3>{subCourse}</h3>
+                                    ><Link to={`/courses/${slugify(subCourse)}`}>
+                                        <h3>{subCourse}</h3>
+                                        </Link>
                                     <img src="./images/icons8-right-50.png" className="w-6 h-8 ml-2"/> 
                                 </li>
                             ))}
@@ -61,6 +68,8 @@ const CoursesPage=()=>{
                         
                         
                     </div>
+
+
                 </div>
                 
             ))}
